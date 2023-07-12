@@ -3,6 +3,7 @@ import { Component } from 'react';
 import AppInfo from '../app-info/app-info';
 import AppFilter from '../app-filter/app-filter';
 import SearchPanel from '../search-panel/search-panel'
+import EmployersAddForm from '../employers-add-form/employers-add-form';
 
 import './app.scss';
 
@@ -110,10 +111,10 @@ class App extends Component {
                     <SearchPanel onUpdateSearch={this.onUpdateSearch} />
                     <AppFilter filter={filter} onFilterSelect={this.onFilterSelect} />
                 </div>
+                <EmployersAddForm onAdd={this.addItem} />
             </div>
         )
     }
-
 }
 
 export default App;
