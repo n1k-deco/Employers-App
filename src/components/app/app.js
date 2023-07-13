@@ -4,6 +4,7 @@ import AppInfo from '../app-info/app-info';
 import AppFilter from '../app-filter/app-filter';
 import SearchPanel from '../search-panel/search-panel'
 import EmployersAddForm from '../employers-add-form/employers-add-form';
+import EmployersList from '../employers-list/employers-list';
 
 import './app.scss';
 
@@ -99,9 +100,10 @@ class App extends Component {
     }
 
     render() {
-        const {filter} = this.state;
+        const {data, term, filter} = this.state;
         const employees = this.state.data.length;
         const increased = this.state.data.filter(item => item.increase).length;
+        const visibleData = this.filterPost(this.searchEmp(data, term), filter);
 
         return (
             <div className="app">
@@ -111,6 +113,11 @@ class App extends Component {
                     <SearchPanel onUpdateSearch={this.onUpdateSearch} />
                     <AppFilter filter={filter} onFilterSelect={this.onFilterSelect} />
                 </div>
+                <EmployersList 
+                    data={visibleData}
+                    onDelete={this.deleteItem}
+                    onToggleIncrease={this.onToggleIncrease}
+                    onToggleRise={this.onToggleRise} />
                 <EmployersAddForm onAdd={this.addItem} />
             </div>
         )
