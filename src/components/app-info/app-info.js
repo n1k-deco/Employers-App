@@ -1,5 +1,3 @@
-import './app-info.scss';
-
 const AppInfo = ({increased, employees}) => {
     return (
         <div className="app-info">

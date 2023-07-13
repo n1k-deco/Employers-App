@@ -6,8 +6,6 @@ import SearchPanel from '../search-panel/search-panel'
 import EmployersAddForm from '../employers-add-form/employers-add-form';
 import EmployersList from '../employers-list/employers-list';
 
-import './app.scss';
-
 class App extends Component {
     constructor(props) {
         super(props);

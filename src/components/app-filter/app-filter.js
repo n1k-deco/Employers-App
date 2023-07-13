@@ -1,5 +1,3 @@
-import './app-filter.scss';
-
 const AppFilter = (props) => {
     const buttonsData = [
         {name: 'all', label: 'Все сотрудники'},

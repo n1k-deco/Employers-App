@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import './employers-add-form.scss';
 
 class EmployersAddForm extends Component {
     state = {
